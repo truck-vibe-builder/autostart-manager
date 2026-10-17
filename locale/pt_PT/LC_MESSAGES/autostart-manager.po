@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: autostart-manager 1.0\n"
+"POT-Creation-Date: 2026-10-10 19:00+0100\n"
+"PO-Revision-Date: 2026-10-10 19:00+0100\n"
+"Last-Translator: Damião\n"
+"Language-Team: Portuguese (Portugal)\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Startup Applications"
+msgstr "Aplicações de Arranque"
+
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Remove"
+msgstr "Remover"
+
+msgid "Edit/Add Startup Item"
+msgstr "Editar/Adicionar Item de Arranque"
+
+msgid "Name:"
+msgstr "Nome:"
+
+msgid "e.g., OneDrive Tray"
+msgstr "ex: OneDrive Tray"
+
+msgid "Command / Script:"
+msgstr "Comando / Script:"
+
+msgid "e.g., python3 /path/script.py"
+msgstr "ex: python3 /caminho/script.py"
+
+msgid "Browse..."
+msgstr "Navegar..."
+
+msgid "Comment:"
+msgstr "Comentário:"
+
+msgid "e.g., Starts OneDrive synchronization"
+msgstr "ex: Inicia a sincronização do OneDrive"
+
+msgid "Select Script or Executable"
+msgstr "Selecionar Script ou Executável"
+
+msgid "Command:"
+msgstr "Comando:"
