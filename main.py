@@ -8,13 +8,13 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk
 
 # ---------------------------------------------------------
-# Configuração de Internacionalização (i18n) - Padrão Nativo
+# Internationalization Configuration (i18n) - Native Standard
 # ---------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOCAL_LOCALE = os.path.join(BASE_DIR, 'locale')
 
-# Atenção: /usr/bin/locale é um comando do sistema (ficheiro), por isso
-# é preciso verificar que é uma pasta e que tem a nossa tradução.
+# Attention: /usr/bin/locale is a system command (file), so
+# we need to check that it is a directory and contains our translation.
 if os.path.isfile(os.path.join(LOCAL_LOCALE, 'pt_PT', 'LC_MESSAGES', 'autostart-manager.mo')):
     LOCALE_DIR = LOCAL_LOCALE
 else:
@@ -29,9 +29,9 @@ except Exception:
 
 
 def _setup_translation():
-    """Respeita a ordem de prioridade dos idiomas (LANGUAGE, LC_ALL,
-    LC_MESSAGES, LANG). Qualquer variante portuguesa (pt, pt_PT, pt_BR)
-    usa a tradução pt_PT. Se o primeiro idioma for inglês, não traduz."""
+    """Respects the priority order of languages (LANGUAGE, LC_ALL,
+    LC_MESSAGES, LANG). Any Portuguese variant (pt, pt_PT, pt_BR)
+    uses the pt_PT translation. If the primary language is English, do not translate."""
     prefs = []
     for var in ('LANGUAGE', 'LC_ALL', 'LC_MESSAGES', 'LANG'):
         val = os.environ.get(var)
@@ -41,7 +41,7 @@ def _setup_translation():
     langs = []
     for l in prefs:
         if l in ('C', 'POSIX') or l.startswith('en'):
-            langs.append('C')   # 'C' pára a procura -> texto original em inglês
+            langs.append('C')   # 'C' stops the search -> original English text
             break
         langs.append('pt_PT' if l.startswith('pt') else l)
 
@@ -55,7 +55,7 @@ _ = _setup_translation()
 
 AUTOSTART_DIR = os.path.expanduser('~/.config/autostart')
 
-# Estilo CSS para cards arredondados e linhas de texto diferenciadas
+# CSS style for rounded cards and distinct text lines
 STYLE_PROVIDER = Gtk.CssProvider()
 CSS_DATA = b"""
 list {
@@ -63,7 +63,7 @@ list {
     padding: 6px;
 }
 
-/* Contentor de cada entrada (Card) */
+/* Container for each entry (Card) */
 list row {
     background-color: rgba(255, 255, 255, 0.07);
     margin-bottom: 10px;
@@ -80,13 +80,13 @@ list row:selected {
     background-color: rgba(255, 255, 255, 0.18);
 }
 
-/* Nome da app em destaque */
+/* Highlighted app name */
 .name-label {
     font-weight: bold;
     font-size: 14px;
 }
 
-/* Linha do Comando */
+/* Command line */
 .exec-label {
     color: #b0b0b0;
     font-size: 12px;
@@ -94,7 +94,7 @@ list row:selected {
     font-family: monospace;
 }
 
-/* Linha do Comentario */
+/* Comment line */
 .comment-label {
     color: #888888;
     font-size: 11px;
@@ -151,7 +151,7 @@ class EditDialog(Gtk.Dialog):
 class AutostartManager(Gtk.Window):
     def __init__(self):
         super().__init__(title=_("Startup Applications"))
-        # Largura ajustada para 1000px e altura para 500px
+        # Width adjusted to 1000px and height to 500px
         self.set_default_size(1000, 500)
         self.set_border_width(12)
 
@@ -175,7 +175,7 @@ class AutostartManager(Gtk.Window):
         scrolled.add(self.listbox)
         vbox.pack_start(scrolled, True, True, 0)
 
-        # Botões de Ação
+        # Action Buttons
         hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
         vbox.pack_start(hbox, False, False, 0)
 
@@ -237,21 +237,21 @@ class AutostartManager(Gtk.Window):
         check.connect("toggled", self.on_row_toggled, row)
         main_hbox.pack_start(check, False, False, 0)
 
-        # VBox com linhas de texto
+        # VBox with text lines
         text_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
 
-        # 1. Nome (Bold)
+        # 1. Name (Bold)
         lbl_name = Gtk.Label(label=name, xalign=0)
         lbl_name.get_style_context().add_class("name-label")
         text_vbox.pack_start(lbl_name, False, False, 0)
 
-        # 2. Comando
+        # 2. Command
         if exec_cmd:
             lbl_exec = Gtk.Label(label=f"{_('Command:')} {exec_cmd}", xalign=0)
             lbl_exec.get_style_context().add_class("exec-label")
             text_vbox.pack_start(lbl_exec, False, False, 0)
 
-        # 3. Comentário
+        # 3. Comment
         if comment:
             lbl_comment = Gtk.Label(label=comment, xalign=0)
             lbl_comment.get_style_context().add_class("comment-label")
