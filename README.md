@@ -6,7 +6,7 @@ A lightweight, modern GTK3 desktop utility designed to manage user startup appli
 
 ## Overview
 
-Many modern Linux distributions no longer ship with a simple, dedicated tool for managing user autostart entries (`.desktop` files in `~/.config/autostart`). 
+Some modern Linux distributions no longer ship with a simple, dedicated tool for managing user autostart entries (`.desktop` files in `~/.config/autostart`). 
 
 Inspired by classic desktop utilities (such as the traditional GNOME Startup Applications tool), **Autostart Manager** fills this gap by offering a clean, modern interface to easily view, toggle, edit, and create startup items without needing to manage `.desktop` files manually in the terminal.
 
