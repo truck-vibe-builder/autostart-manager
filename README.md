@@ -23,7 +23,7 @@ Inspired by classic desktop utilities (such as the traditional GNOME Startup App
 Download the latest `.deb` package from the [Releases](../../releases) page and install it using your package manager or terminal:
 
 ```bash
-sudo apt install ./autostart-manager_1.0-2_all.deb
+sudo apt install ./autostart-manager_1.0-3_all.deb
 ```
 
 ## Running from Source
