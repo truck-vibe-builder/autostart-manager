@@ -2,7 +2,7 @@
 set -e
 
 APP_NAME="autostart-manager"
-VERSION="1.0-2"
+VERSION="1.0-3"
 ARCH="all"
 BUILD_DIR="deb_build"
 PO_FILE="locale/pt_PT/LC_MESSAGES/autostart-manager.po"
