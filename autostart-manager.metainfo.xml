@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>autostart-manager</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Startup Applications</name>
+  <summary>Manage user startup scripts and applications</summary>
+  <description>
+    <p>
+      A lightweight desktop application to manage startup scripts and
+      applications for Ubuntu, Linux Mint, GNOME, XFCE, and KDE.
+    </p>
+  </description>
+  <launchable type="desktop-id">autostart-manager.desktop</launchable>
+  <url type="homepage">https://github.com/truck-vibe-builder/autostart-manager</url>
+  <developer_name>truck-vibe-builder</developer_name>
+</component>

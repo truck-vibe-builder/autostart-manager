@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Startup Applications
+Name[pt_PT]=Aplicações de Arranque
+Name[pt]=Aplicações de Arranque
+Comment=Manage user startup scripts and applications
+Comment[pt_PT]=Gerir scripts e aplicações de arranque do utilizador
+Exec=autostart-manager
+Icon=autostart-manager
+Terminal=false
+Categories=Utility;Settings;
+X-GNOME-Autostart-enabled=true
+X-AppStream-Url-homepage=https://github.com/truck-vibe-builder/autostart-manager
